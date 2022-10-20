@@ -1,6 +1,7 @@
 ﻿using Azure;
 using Azure.Data.Tables;
 using System.ComponentModel.DataAnnotations;
+using TestCode.Attributes;
 
 namespace TestCode.Entities
 {
@@ -12,8 +13,7 @@ namespace TestCode.Entities
         public string Gender { get; set; }
         public string Address { get; set; }
         [Required]
-        [DataType(DataType.EmailAddress)]
-        [EmailAddress]
+        [EmailAttribute]
         public string Email { get; set; }
         public string Note { get; set; }
         public string? PartitionKey { get; set; }
